@@ -315,7 +315,7 @@ function ajouterLogoPDF() {
             resolve();
         };
 
-        imageLogo.src = "images/logo.jpg";
+        imageLogo.src = "logo.jpg";
     });
 }
 
