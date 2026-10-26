@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculatrice d'intérêts composés CLIENT BABOI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<body>
+
+    <header class="entete">
+        <h1>Calculatrice d'intérêts composés CLIENT BABOI</h1>
+
+        <div class="emplacement-logo">
+            <img src="images/logo.jpg" alt="Logo CLIENT BABOI">
+        </div>
+    </header>
+
+    <p class="introduction">
+        Simulez l'évolution de votre placement au fil du temps :
+        capital de départ, durée, taux et versements réguliers.
+    </p>
+
+
+    <section class="simulation">
+
+        <h2>Votre simulation</h2>
+
+        <form id="formulaire-simulation">
+
+            <div class="champs">
+
+                <div class="champ">
+                    <label for="capital">Placement initial (FCFA)</label>
+                    <input
+                        type="number"
+                        id="capital"
+                        name="capital"
+                        min="0"
+                        value="250000"
+                        required
+                    >
+                </div>
+
+                <div class="champ">
+                    <label for="duree">Durée du placement (années)</label>
+                    <input
+                        type="number"
+                        id="duree"
+                        name="duree"
+                        min="1"
+                        value="1"
+                        required
+                    >
+                </div>
+
+                <div class="champ">
+                    <label for="versement">Versements réguliers (FCFA)</label>
+                    <input
+                        type="number"
+                        id="versement"
+                        name="versement"
+                        min="0"
+                        value="25000"
+                        required
+                    >
+                </div>
+
+                <div class="champ">
+                    <label for="frequence">Fréquence des versements</label>
+                    <select id="frequence" name="frequence">
+                        <option value="12">Une fois par mois</option>
+                        <option value="4">Une fois par trimestre</option>
+                        <option value="2">Une fois par semestre</option>
+                        <option value="1">Une fois par an</option>
+                    </select>
+                </div>
+
+                <div class="champ">
+                    <label for="taux">Taux d'intérêt annuel (%)</label>
+                    <input
+                        type="number"
+                        id="taux"
+                        name="taux"
+                        step="any"
+                        value="15"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="boutons">
+                <button type="submit">Calculer</button>
+                <button type="reset">Réinitialiser</button>
+                 <button type="button" id="exporter-pdf">Exporter en PDF</button>
+            </div>
+
+        </form>
+
+        <p class="note">
+            Convention de calcul : les intérêts sont capitalisés chaque mois,
+            et les versements sont pris en compte à la fin de chaque période.
+        </p>
+
+    </section>
+    
+
+
+    
+<section class="resultats" id="resultats">
+    <h2>Résultats de votre simulation</h2>
+
+    <div class="cartes-resultats">
+        <div class="carte-resultat">
+            <p>Capital final</p>
+            <h3 id="capital-final">0 FCFA</h3>
+        </div>
+
+        <div class="carte-resultat">
+            <p>Total investi</p>
+            <h3 id="total-investi">0 FCFA</h3>
+        </div>
+
+        <div class="carte-resultat">
+            <p>Intérêts générés</p>
+            <h3 id="interets-generes">0 FCFA</h3>
+        </div>
+    </div>
+</section>
+
+<section class="graphique">
+    <h2>Évolution de votre investissement</h2>
+
+    <div class="conteneur-graphique">
+        <canvas id="graphique-capital"></canvas>
+    </div>
+</section>
+
+
+<section class="evolution">
+    <h2>Évolution annuelle de votre investissement</h2>
+
+    <div class="tableau-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Année</th>
+                    <th>Capital début</th>
+                    <
+<th>Versements cumulés</th>
+<th>Intérêts de l'année</th>
+<th>Intérêts cumulés</th>
+<th>Capital final</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="corps-tableau">
+                <tr>
+                    <td colspan="6">
+                        Lancez une simulation pour afficher l'évolution.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
